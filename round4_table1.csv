@@ -1,0 +1,7 @@
+system,MiP,MiR,MiF1,MaF1,avg_labels_predicted
+context,0.4665,0.8744,0.6084,0.4856,24.026
+extractive_summary,0.5109,0.69,0.5871,0.4318,17.3117
+pegasus_summary,0.4639,0.8207,0.5928,0.4527,22.6753
+hybrid_leakfree,0.5026,0.5785,0.5379,0.3463,14.7532
+CONSTANT (no input; train freq >= 0.30),0.5638,0.7477,0.6429,0.2841,17.0
+PREDICT EVERY LABEL (no input),0.3126,1.0,0.4764,0.4164,41.0

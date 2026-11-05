@@ -108,10 +108,12 @@ LIME's local R² stays near 0.4 at every sample count.
 |---|---|
 | `round4_diagnose_and_lime.py` | Round 4: diagnostics and LIME sweep |
 | `lime_round4_summary.csv` | Stability table above |
+| `round4_table1.csv` | Table 1 with the no-input baselines (micro-F1 0.608 vs 0.643) |
+| `round4_per_label.csv` | Per-label AUROC and clause visibility (e.g. Governing Law 0.823, never in the input) |
 | `lime_round4_progress.json` | Every run: seed, top words, weights, R² |
 | `lime_round4_clauses.json` | The 18 selected items and their input text |
 | `lime_instability_round3.py` | Round 3 (superseded) |
-| `lime_instability_round2.py`, `lime_*_round2.json` | Round 2 (superseded) |
+| `lime_instability_round2.py`, `lime_progress_round2.json` | Round 2 (superseded) |
 | `split_record_TRAINVALTEST_PERMANENT.json` | Train/val/test contract hashes |
 
 ## Reproducing
@@ -130,5 +132,5 @@ The run is resumable and takes about 2.5 hours on an Apple Silicon GPU.
 ## Context
 
 The classifier comes from *"Does Compression Preserve What Classification
-Needs?"* (with Dr. Alaa Marshan, submitted to JURIX 2026). That paper does not
+Needs?"* (with Dr. Alaa Marshan, manuscript, 2026). That paper does not
 use LIME; this repository is separate follow-up work.
