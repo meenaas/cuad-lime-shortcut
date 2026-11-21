@@ -2,14 +2,16 @@
 
 **Status (4 Oct 2026): round 4 complete. The instability I first reported was
 an artefact of my setup. With that fixed, LIME is fairly stable, and what it
-shows is that the classifier relies on contract type, not on the clause.**
+shows is that the classifier relies on contract type, not on the clause. The
+Governing Law clause is outside the model's input in every test contract, yet
+it still predicts that label well (AUROC 0.823).**
 
 ## Summary
 
 | Round | Setup | Result |
 |---|---|---|
 | 2 | 150 LIME samples; 384-token windows cut from the contract | Jaccard@5 of 0.06-0.07. Looked like LIME was unreliable. |
-| 3 | Token-budgeted windows, sample sweep | The model was unsure on almost every window (3 of 64 Governing Law clauses above 0.5). Something was wrong with the input. |
+| 3 | Token-budgeted windows, sample sweep | The model gave Governing Law a probability above 0.5 on only 3 of 64 windows. Something was wrong with the input. |
 | 4 | The model's real input (first 512 tokens of the contract), sample sweep up to 2,500 | Jaccard@5 of 0.65-0.77. Attributions follow the contract, not the label. |
 
 ## What I got wrong in round 2
@@ -120,7 +122,7 @@ LIME's local R² stays near 0.4 at every sample count.
 
 Not included: the trained checkpoint (too large for git), CUAD
 ([Atticus Project](https://www.atticusprojectai.org/cuad)) and the summary
-files used alongside it. Contact me for these.
+files used alongside it. Open an issue on this repository or email me at meenakshiishanmugamm@gmail.com to request them.
 
     pip install torch transformers lime scikit-learn pandas numpy
     RUN_LIME=1 REQUIRE_VISIBLE=0 \
@@ -132,5 +134,6 @@ The run is resumable and takes about 2.5 hours on an Apple Silicon GPU.
 ## Context
 
 The classifier comes from *"Does Compression Preserve What Classification
-Needs?"* (with Dr. Alaa Marshan, manuscript, 2026). That paper does not
-use LIME; this repository is separate follow-up work.
+Needs?"* (with Dr. Alaa Marshan, manuscript under revision, 2026), which grew out of my
+[MSc dissertation](https://github.com/meenaas/legal-clause-classification-dissertation).
+That paper does not use LIME; this repository is separate follow-up work.
