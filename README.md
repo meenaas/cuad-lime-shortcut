@@ -122,7 +122,8 @@ LIME's local R² stays near 0.4 at every sample count.
 
 Not included: the trained checkpoint (too large for git), CUAD
 ([Atticus Project](https://www.atticusprojectai.org/cuad)) and the summary
-files used alongside it. Open an issue on this repository or email me at meenakshiishanmugamm@gmail.com to request them.
+files used alongside it. Open an issue on this repository or email me at
+meenakshiishanmugamm@gmail.com to request them.
 
     pip install torch transformers lime scikit-learn pandas numpy
     RUN_LIME=1 REQUIRE_VISIBLE=0 \
@@ -134,6 +135,6 @@ The run is resumable and takes about 2.5 hours on an Apple Silicon GPU.
 ## Context
 
 The classifier comes from *"Does Compression Preserve What Classification
-Needs?"* (with Dr. Alaa Marshan, manuscript under revision, 2026), which grew out of my
-[MSc dissertation](https://github.com/meenaas/legal-clause-classification-dissertation).
+Needs?"* (with Dr. Alaa Marshan, manuscript under revision, 2026), which grew
+out of my [MSc dissertation](https://github.com/meenaas/legal-clause-classification-dissertation).
 That paper does not use LIME; this repository is separate follow-up work.
